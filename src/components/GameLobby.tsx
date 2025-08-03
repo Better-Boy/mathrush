@@ -26,7 +26,7 @@ export function GameLobby({ setCurrentView, setCurrentGameId }: GameLobbyProps) 
       setCurrentGameId(result.gameId);
       setCurrentView('game');
       toast.success(`Game created! Invite code: ${result.inviteCode}`);
-    } catch (error) {
+    } catch {
       toast.error("Failed to create game");
     }
   };

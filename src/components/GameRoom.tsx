@@ -54,20 +54,7 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
   useEffect(() => {
     if(game?.status === 'active') setIsReady(true);
   }, [game?.status]);
-
-  // const sendMail = async () =>{
-  //     console.log(timeLeft);
-  //     await sendMailAfterGame({
-  //     gameId: gameId,
-  //     timeLeft: timeLeft
-  //   });
-  //   console.log("oh");
-  //   if(gameFinished && isHost){
-  //     toast.error("sfsdfsd");
-  //     console.log("hi");
-  //       sendMail();
-  //   }
-  //   }
+  
   useEffect(() => {
     const sendMail = async () =>{
       await sendMailAfterGame({

@@ -43,7 +43,7 @@ export function SignInForm() {
           className="auth-input-field"
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="Password (Min 8 characters)"
           required
         />
         <button className="auth-button" type="submit" disabled={submitting}>
