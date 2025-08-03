@@ -48,8 +48,7 @@ export function GameLobby({ setCurrentView, setCurrentGameId }: GameLobbyProps) 
   };
 
   const availableTopics = [
-    'addition', 'subtraction', 'multiplication', 'division', 
-    'fractions', 'decimals', 'geometry', 'algebra', 'integrals', 'differentiation'
+    'addition', 'subtraction', 'multiplication', 'division'
   ];
 
   return (

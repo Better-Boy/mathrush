@@ -1,29 +1,105 @@
-# Multiplayer Math Quiz Game
-  
-This is a project built with [Chef](https://chef.convex.dev) using [Convex](https://convex.dev) as its backend.
- You can find docs about Chef with useful information like how to deploy to production [here](https://docs.convex.dev/chef).
-  
-This project is connected to the Convex deployment named [`ardent-mastiff-959`](https://dashboard.convex.dev/d/ardent-mastiff-959).
-  
-## Project structure
-  
-The frontend code is in the `app` directory and is built with [Vite](https://vitejs.dev/).
-  
-The backend code is in the `convex` directory.
-  
-`npm run dev` will start the frontend and backend servers.
+# 🧮 MathRush
 
-## App authentication
+**MathRush** is a fast-paced multiplayer web game designed to help kids practice their math skills in a fun, competitive environment. Built with cutting-edge modern web technologies, it blends real-time gameplay with smart feedback powered by AI.
 
-Chef apps use [Convex Auth](https://auth.convex.dev/) with Anonymous auth for easy sign in. You may wish to change this before deploying your app.
+---
 
-## Developing and deploying your app
+## 🛠 Tech Stack
 
-Check out the [Convex docs](https://docs.convex.dev/) for more information on how to develop with Convex.
-* If you're new to Convex, the [Overview](https://docs.convex.dev/understanding/) is a good place to start
-* Check out the [Hosting and Deployment](https://docs.convex.dev/production/) docs for how to deploy your app
-* Read the [Best Practices](https://docs.convex.dev/understanding/best-practices/) guide for tips on how to improve you app further
+| Technology     | Purpose                                       |
+|----------------|-----------------------------------------------|
+| 🧠 OpenAI       | Smart feedback and question generation         |
+| 📦 Convex       | Real-time database, storage & backend logic   |
+| 🧩 Convex Auth  | Seamless authentication                       |
+| ⚛️ React (Vite) | Lightning-fast frontend                       |
+| 🧪 ShadCN UI    | Elegant, accessible component library         |
 
-## HTTP API
+---
 
-User-defined http routes are defined in the `convex/router.ts` file. We split these routes into a separate file from `convex/http.ts` to allow us to prevent the LLM from modifying the authentication routes.
+## Features
+
+### 🚀 Gameplay
+- **Solve math problems in real time**, powered by AI-generated content  
+- **Unlimited multiplayer matches**, with no cap on participants  
+- **Instant scoring**, showing each player’s score as the game progresses  
+- **Real-time leaderboards**, updating live throughout the game
+
+
+### 📩 Resend Email Features
+- **Game invitations** sent directly by the game host  
+- **Invite tracking** through Resend webhooks  
+- **Game results** including leaderboard highlights  
+- **Daily Math Challenge** delivered to subscribed users  
+- **Weekly digest emails** featuring top news and a summary of a random math concept
+
+### ⚡ **Convex Features**
+- **Real time scoring** scores updated instantly after answering a question
+- **Synchronized Timer** synchronized timer between different users in the same game
+- **Convex Auth** convex auth for security
+- **Cron Jobs** for weekly and daily emails
+- **Scheduled Queries** for sending game result after completion of game
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/mathrush.git
+cd mathrush
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup environment variables
+
+Create a .env.local file in the root directory:
+
+```
+VITE_CONVEX_URL=your-convex-deployment-url
+VITE_OPENAI_API_KEY=your-openai-key
+```
+
+Add the following keys to convex project environment variables:
+1. RESEND_WEBHOOK_SECRET
+2. RESEND_API_KEY
+3. OPENAI_API_KEY
+
+🛡️ Keep your API keys secure and never commit them to Git!
+
+### 4. Run the development server
+
+```
+npx convex dev
+npm run dev
+```
+
+The app will be available at http://localhost:5173
+
+
+## 🧮 How It Works
+
+Each player logs in using Convex Auth.
+
+A game session is started, and OpenAI dynamically generates math problems based on difficulty settings.
+
+Convex keeps all game state in sync between players in real-time.
+
+Players compete to solve problems fastest — scores update live!
+
+Beautiful, responsive UI made possible by ShadCN components.
+
+## 🤝 Contributing
+
+PRs and issues are welcome! Please open an issue to discuss features or bugs.
+
+## Roadmap
+
+- Game history & stats
+- Adaptive AI difficulty
+

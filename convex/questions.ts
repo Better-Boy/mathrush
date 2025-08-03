@@ -53,6 +53,422 @@ export const addSampleQuestions = internalMutation({
   handler: async (ctx) => {
       const questions = [
   {
+    "question": "What is 7 × 6?",
+    "options": ["42", "36", "48", "52"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "7 times 6 is 42."
+  },
+  {
+    "question": "If you have 8 packs of stickers, each with 9 stickers, how many stickers in total?",
+    "options": ["72", "81", "64", "69"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "8 × 9 = 72 stickers in total."
+  },
+  {
+    "question": "What is 12 × 5?",
+    "options": ["60", "50", "65", "55"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "12 times 5 equals 60."
+  },
+  {
+    "question": "You buy 4 boxes, each containing 15 candies. How many candies do you have?",
+    "options": ["60", "45", "50", "75"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "4 × 15 = 60 candies total."
+  },
+  {
+    "question": "What is 9 × 8?",
+    "options": ["72", "81", "63", "69"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "9 times 8 equals 72."
+  },
+  {
+    "question": "6 × 7 equals?",
+    "options": ["42", "36", "48", "52"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "6 × 7 = 42."
+  },
+  {
+    "question": "5 × 11 = ?",
+    "options": ["55", "50", "60", "65"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "5 times 11 is 55."
+  },
+  {
+    "question": "What is 4 × 14?",
+    "options": ["56", "58", "52", "60"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "4 × 14 = 56."
+  },
+  {
+    "question": "3 × 13 = ?",
+    "options": ["39", "36", "33", "42"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "3 times 13 equals 39."
+  },
+  {
+    "question": "What is 10 × 8?",
+    "options": ["80", "72", "90", "70"],
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "topic": "multiplication",
+    "explanation": "10 × 8 = 80."
+  },
+  {
+    "question": "What is 14 × 6?",
+    "options": ["84", "78", "80", "90"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "14 times 6 is 84."
+  },
+  {
+    "question": "If one notebook costs ₹23 and you buy 7, what’s the total cost?",
+    "options": ["₹161", "₹143", "₹130", "₹175"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "23 × 7 = 161."
+  },
+  {
+    "question": "Calculate 18 × 4.",
+    "options": ["72", "64", "76", "68"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "18 times 4 equals 72."
+  },
+  {
+    "question": "12 × 12 = ?",
+    "options": ["144", "132", "148", "156"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "12 × 12 is 144."
+  },
+  {
+    "question": "Multiply 15 × 9.",
+    "options": ["135", "125", "145", "115"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "15 times 9 equals 135."
+  },
+  {
+    "question": "What is 17 × 5?",
+    "options": ["85", "75", "90", "95"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "17 × 5 = 85."
+  },
+  {
+    "question": "Calculate 13 × 8.",
+    "options": ["104", "98", "108", "112"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "13 times 8 equals 104."
+  },
+  {
+    "question": "If a car travels 45 km per hour, how far does it go in 6 hours?",
+    "options": ["270 km", "240 km", "300 km", "260 km"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "45 × 6 = 270 km."
+  },
+  {
+    "question": "Multiply 22 × 3.",
+    "options": ["66", "63", "72", "58"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "22 times 3 equals 66."
+  },
+  {
+    "question": "What is 16 × 7?",
+    "options": ["112", "108", "120", "104"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "16 × 7 = 112."
+  },
+  {
+    "question": "Calculate 25 × 4.",
+    "options": ["100", "90", "110", "95"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "25 times 4 equals 100."
+  },
+  {
+    "question": "Multiply 19 × 6.",
+    "options": ["114", "108", "120", "110"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "19 × 6 = 114."
+  },
+  {
+    "question": "What is 23 × 5?",
+    "options": ["115", "105", "125", "110"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "23 times 5 equals 115."
+  },
+  {
+    "question": "Compute 24 × 6.",
+    "options": ["144", "150", "138", "156"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "24 × 6 = 144."
+  },
+  {
+    "question": "What is 27 × 4?",
+    "options": ["108", "112", "102", "116"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "27 times 4 equals 108."
+  },
+  {
+    "question": "Multiply 11 × 13.",
+    "options": ["143", "133", "153", "123"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "11 × 13 = 143."
+  },
+  {
+    "question": "What is 14 × 14?",
+    "options": ["196", "186", "204", "190"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "14 times 14 equals 196."
+  },
+  {
+    "question": "Compute 18 × 11.",
+    "options": ["198", "188", "208", "178"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "18 × 11 = 198."
+  },
+  {
+    "question": "Multiply 26 × 7.",
+    "options": ["182", "172", "192", "162"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "26 times 7 equals 182."
+  },
+  {
+    "question": "What is 29 × 8?",
+    "options": ["232", "224", "238", "218"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "29 × 8 = 232."
+  },
+  {
+    "question": "Calculate 31 × 6.",
+    "options": ["186", "176", "196", "166"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "31 times 6 equals 186."
+  },
+  {
+    "question": "What is 33 × 5?",
+    "options": ["165", "155", "175", "160"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "33 × 5 = 165."
+  },
+  {
+    "question": "Multiply 21 × 9.",
+    "options": ["189", "179", "199", "169"],
+    "correctAnswer": 0,
+    "difficulty": "medium",
+    "topic": "multiplication",
+    "explanation": "21 times 9 equals 189."
+  },
+  {
+    "question": "Multiply 17 × 12.",
+    "options": ["204", "194", "214", "184"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "17 × 12 = 204."
+  },
+  {
+    "question": "What is 24 × 13?",
+    "options": ["312", "300", "324", "292"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "24 times 13 equals 312."
+  },
+  {
+    "question": "Calculate 18 × 17.",
+    "options": ["306", "296", "316", "286"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "18 × 17 = 306."
+  },
+  {
+    "question": "What is 23 × 14?",
+    "options": ["322", "312", "332", "342"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "23 times 14 equals 322."
+  },
+  {
+    "question": "Multiply 15 × 18.",
+    "options": ["270", "260", "280", "250"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "15 × 18 = 270."
+  },
+  {
+    "question": "Calculate 27 × 16.",
+    "options": ["432", "422", "442", "412"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "27 times 16 equals 432."
+  },
+  {
+    "question": "What is 19 × 17?",
+    "options": ["323", "313", "333", "303"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "19 × 17 = 323."
+  },
+  {
+    "question": "Multiply 22 × 15.",
+    "options": ["330", "320", "340", "310"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "22 times 15 equals 330."
+  },
+  {
+    "question": "Calculate 31 × 14.",
+    "options": ["434", "424", "444", "414"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "31 × 14 = 434."
+  },
+  {
+    "question": "What is 29 × 13?",
+    "options": ["377", "367", "387", "357"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "29 times 13 equals 377."
+  },
+  {
+    "question": "Multiply 28 × 19.",
+    "options": ["532", "522", "542", "512"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "28 × 19 = 532."
+  },
+  {
+    "question": "Calculate 26 × 18.",
+    "options": ["468", "458", "478", "448"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "26 times 18 equals 468."
+  },
+  {
+    "question": "What is 34 × 12?",
+    "options": ["408", "398", "418", "388"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "34 × 12 = 408."
+  },
+  {
+    "question": "Multiply 33 × 17.",
+    "options": ["561", "551", "571", "541"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "33 times 17 equals 561."
+  },
+  {
+    "question": "Calculate 35 × 16.",
+    "options": ["560", "550", "570", "540"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "35 × 16 = 560."
+  },
+  {
+    "question": "What is 32 × 18?",
+    "options": ["576", "566", "586", "556"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "32 times 18 equals 576."
+  },
+  {
+    "question": "Multiply 36 × 15.",
+    "options": ["540", "530", "550", "520"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "36 × 15 = 540."
+  },
+  {
+    "question": "Calculate 38 × 17.",
+    "options": ["646", "636", "656", "626"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "38 times 17 equals 646."
+  },
+  {
+    "question": "What is 39 × 14?",
+    "options": ["546", "536", "556", "526"],
+    "correctAnswer": 0,
+    "difficulty": "hard",
+    "topic": "multiplication",
+    "explanation": "39 × 14 = 546."
+  },
+  {
     "question": "Lucy has 27 apples and her friend gives her 18 more. How many apples does Lucy have now?",
     "options": ["35", "45", "40", "50"],
     "correctAnswer": 1,
