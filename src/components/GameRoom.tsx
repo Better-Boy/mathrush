@@ -77,7 +77,6 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
     };
 
     if(isHost && gameFinished){
-      window.prompt("hi");
       sendMail();
     }
   }, [gameFinished]);
