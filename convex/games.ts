@@ -265,9 +265,18 @@ export const startGame = mutation({
       status: "active"
     });
 
-    await ctx.db.patch(player._id, {
-      gamesPlayed: player.gamesPlayed + 1
-    });
+    const gameParticipants = await ctx.runQuery(internal.games.getGameParticipants, {gameId: args.gameId});
+    
+    await Promise.all(
+      gameParticipants.map(async (participant) => {
+        const player = await ctx.db.get(participant.playerId);
+        if(player){
+            await ctx.db.patch(player?._id, {
+              gamesPlayed: player.gamesPlayed + 1
+            });
+        }
+      }
+    ));
 
     return true;
   },
@@ -292,7 +301,7 @@ export const getGame = query({
     );
 
     const gameWithAllParticipants: any = await Promise.all(
-      participants.map(async (participant) => await ctx.runQuery(api.games.getGameParticipants, {gameId: args.gameId, playerId: participant.playerId}))
+      participants.map(async () => await ctx.runQuery(internal.games.getGameParticipants, {gameId: args.gameId}))
     );
 
     const emailInviteDetails = await ctx.db
@@ -310,18 +319,17 @@ export const getGame = query({
   },
 });
 
-export const getGameParticipants = query({
+export const getGameParticipants = internalQuery({
   args: {
-    gameId: v.id("games"),
-    playerId: v.id("players")
+    gameId: v.id("games")
   },
   handler : async(ctx, args) => {
     return await ctx.db
       .query("gameParticipants")
-      .withIndex("by_game_player", (q) => q.eq("gameId", args.gameId).eq("playerId", args.playerId))
-      .unique();
+      .withIndex("by_game_player", (q) => q.eq("gameId", args.gameId))
+      .collect();
   }
-})
+});
 
 export const updateAnswer = mutation({
   args: {
