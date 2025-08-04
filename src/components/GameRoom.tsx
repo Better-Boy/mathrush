@@ -48,11 +48,10 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
     }); 
     setCurrentQuestion(currentQuestion);
     };
-    addNextQuestion();
-  }, []);
-
-  useEffect(() => {
-    if(game?.status === 'active') setIsReady(true);
+    if(game?.status === 'active') {
+      addNextQuestion();
+      setIsReady(true);
+    }
   }, [game?.status]);
   
   useEffect(() => {
@@ -397,6 +396,7 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
       </div>
     );
   }
+
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
