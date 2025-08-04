@@ -82,7 +82,6 @@ export const getTopNews = async () => {
       
       const newsData = JSON.parse(content);
     
-      console.log(newsData);
         // Validate the response
         if (!Array.isArray(newsData) || 
             newsData.length !== 3) {

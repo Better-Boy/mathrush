@@ -49,7 +49,7 @@ export function GameLobby({ setCurrentView, setCurrentGameId }: GameLobbyProps) 
   };
 
   const availableTopics = [
-    'addition', 'subtraction', 'multiplication', 'division'
+    'addition', 'subtraction', 'multiplication', 'division', 'fractions', 'geometry', 'algebra'
   ];
 
   return (
@@ -83,8 +83,6 @@ export function GameLobby({ setCurrentView, setCurrentGameId }: GameLobbyProps) 
                 >
                   <option value={5}>5 Questions</option>
                   <option value={10}>10 Questions</option>
-                  <option value={15}>15 Questions</option>
-                  <option value={20}>20 Questions</option>
                 </select>
               </div>
 

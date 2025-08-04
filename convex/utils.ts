@@ -62,7 +62,7 @@ export function generateGameResultEmail(participants: any) {
     <body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5;">
     <div style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden;">
         <!-- Header -->
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; text-align: center;">
+        <div style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); color: white; padding: 20px; text-align: center;">
             <h2 style="margin: 0; font-size: 24px; font-weight: bold;">🏆 Game Leaderboard</h2>
             <p style="margin: 5px 0 0 0; opacity: 0.9;">Current Standings</p>
         </div>
@@ -155,7 +155,7 @@ export function generateWeeklyDigestEmail(mathConcept: any) {
   return `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; padding: 20px; margin: 0;">
     <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px 30px; text-align: center; position: relative; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); padding: 25px 30px; text-align: center; position: relative; overflow: hidden;">
             <h1 style="color: white; font-size: 2em; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2; margin-top: 0;">MathRush Weekly Digest</h1>
             <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1em; font-weight: 300; position: relative; z-index: 2; margin: 0;">Your curated dose of news and knowledge</p>
             <div style="background: rgba(255, 255, 255, 0.2); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 500; margin-top: 10px; display: inline-block; backdrop-filter: blur(10px); position: relative; z-index: 2;">${getCurrentWeekString()}</div>
@@ -197,7 +197,7 @@ export function generateWeeklyDigestEmail_(newsData: any, mathConcept: any) {
   return `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; padding: 20px; margin: 0;">
     <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px 30px; text-align: center; position: relative; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); padding: 25px 30px; text-align: center; position: relative; overflow: hidden;">
             <h1 style="color: white; font-size: 2em; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 2; margin-top: 0;">MathRush Weekly Digest</h1>
             <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1em; font-weight: 300; position: relative; z-index: 2; margin: 0;">Your curated dose of news and knowledge</p>
             <div style="background: rgba(255, 255, 255, 0.2); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 500; margin-top: 10px; display: inline-block; backdrop-filter: blur(10px); position: relative; z-index: 2;">${getCurrentWeekString()}</div>
@@ -274,7 +274,7 @@ export function generateInvitationEmail(gameData: any) {
   const url = `${process.env.SITE_URL || 'http://localhost:5173'}`;
   return `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
-      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 20px;">
+      <div style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 20px;">
         <h1 style="color: white; margin: 0; font-size: 28px;">🎮 You're Invited!</h1>
         <p style="color: white; margin: 10px 0 0 0; font-size: 16px;">Join ${gameData.host?.username}'s MathRush Game</p>
       </div>

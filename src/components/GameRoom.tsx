@@ -371,6 +371,11 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
             <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
               🏆 Game Finished!
             </h1>
+            {timeLeft <= 0 && (
+              <p className="text-red-600 text-lg">
+              Time's Up!!
+            </p>
+            )}
             <p className="text-gray-600 text-lg">Check your email for results. Don't forget to enable "Game Result" in settings.</p>
           </div>
 
@@ -447,6 +452,22 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
             );
           })}
         </div>
+
+        {showResult && currentQuestion?.explanation && (
+          <div className="mt-6 p-6 bg-blue-50 rounded-xl border-l-4 border-blue-500">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <svg className="h-6 w-6 text-blue-500 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-lg font-semibold text-blue-800 mb-2">Explanation</h3>
+                <p className="text-blue-700 leading-relaxed">{currentQuestion.explanation}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Players */}
