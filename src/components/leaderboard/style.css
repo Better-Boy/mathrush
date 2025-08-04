@@ -1,0 +1,255 @@
+/* Leaderboard Container */
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.leaderboard-header {
+  text-align: center;
+}
+
+.leaderboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ca8a04, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.leaderboard-subtitle {
+  color: #4b5563;
+  font-size: 1.125rem;
+}
+
+/* Search */
+.search-container {
+  max-width: 28rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #9333ea;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.clear-search {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clear-search:hover {
+  color: #4b5563;
+}
+
+/* Leaderboard Section */
+.leaderboard-section {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3e8ff;
+  overflow: hidden;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboard-list > * {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.leaderboard-list > *:last-child {
+  border-bottom: none;
+}
+
+/* Player Card */
+.player-card {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s;
+}
+
+.player-card:hover {
+  background-color: #f9fafb;
+}
+
+.player-card.top-three {
+  background: linear-gradient(to right, #fefce8, #fff7ed);
+}
+
+.player-card.clickable {
+  cursor: pointer;
+}
+
+.player-card.clickable:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #9333ea;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rank-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 3rem;
+  text-align: center;
+}
+
+.rank-display.text-yellow-600 {
+  color: #ca8a04;
+}
+
+.rank-display.text-gray-500 {
+  color: #6b7280;
+}
+
+.rank-display.text-orange-600 {
+  color: #ea580c;
+}
+
+.rank-display.text-gray-400 {
+  color: #9ca3af;
+}
+
+.player-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.player-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1.125rem;
+}
+
+.player-stats {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.player-score {
+  text-align: right;
+}
+
+.player-score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #9333ea;
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #9333ea;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.empty-text {
+  color: #4b5563;
+}
+
+/* Stats Section */
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .stats-section {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.stat-card {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.stat-icon {
+  font-size: 1.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  opacity: 0.9;
+}

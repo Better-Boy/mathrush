@@ -1,0 +1,238 @@
+/* Settings Container */
+.settings-container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.settings-header {
+  text-align: center;
+}
+
+.settings-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.settings-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #9333ea, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.settings-subtitle {
+  color: #4b5563;
+  font-size: 1.125rem;
+}
+
+/* Settings Card */
+.settings-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.settings-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Email Preferences */
+.email-preferences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.email-preference-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.email-preference-card.purple {
+  background-color: #f5f3ff;
+}
+
+.email-preference-card.pink {
+  background-color: #fdf2f8;
+}
+
+.preference-content {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.preference-title {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.preference-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  width: 2.75rem;
+  height: 1.5rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: white;
+  top: 0.125rem;
+  left: 0.125rem;
+  transition: transform 0.2s;
+  border: 1px solid #d1d5db;
+}
+
+.toggle-input:checked + .toggle-slider {
+  background-color: #9333ea;
+}
+
+.toggle-input:checked + .toggle-slider.pink {
+  background-color: #ec4899;
+}
+
+.toggle-input:checked + .toggle-slider::before {
+  transform: translateX(1.25rem);
+}
+
+.toggle-slider.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Feedback Form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e9d5ff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #9333ea;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+.form-textarea {
+  resize: none;
+  font-family: inherit;
+}
+
+.form-button {
+  background-color: #9333ea;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-button:hover {
+  background-color: #7e22ce;
+}
+
+.form-button:disabled {
+  background-color: #9333ea;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* About Section */
+.about-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.about-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  color: #4b5563;
+  max-width: 32rem;
+  margin: 0 auto 1rem;
+}
+
+.about-version {
+  font-size: 0.875rem;
+  color: #6b7280;
+}

@@ -1,0 +1,256 @@
+/* Profile Container */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.profile-header {
+  text-align: center;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #9333ea, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.profile-subtitle {
+  color: #4b5563;
+  font-size: 1.125rem;
+}
+
+/* Profile Card */
+.profile-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  border: 1px solid #f3e8ff;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-right: 1.5rem;
+}
+
+.profile-details {
+  text-align: center;
+}
+
+.profile-username {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.profile-email {
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.profile-stat {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.profile-stat.orange {
+  background-color: #fff7ed;
+}
+
+.profile-stat.blue {
+  background-color: #eff6ff;
+}
+
+.profile-stat.green {
+  background-color: #f0fdf4;
+}
+
+.profile-stat.purple {
+  background-color: #faf5ff;
+}
+
+.profile-stat-value {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.profile-stat.orange .profile-stat-value {
+  color: #ea580c;
+}
+
+.profile-stat.blue .profile-stat-value {
+  color: #2563eb;
+}
+
+.profile-stat.green .profile-stat-value {
+  color: #16a34a;
+}
+
+.profile-stat.purple .profile-stat-value {
+  color: #9333ea;
+}
+
+.profile-stat-label {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-top: 0.25rem;
+}
+
+/* Achievements Section */
+.achievements-section {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  border: 1px solid #dbeafe;
+}
+
+.achievements-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievement-badge {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.achievement-badge.yellow {
+  background-color: #fefce8;
+}
+
+.achievement-badge.blue {
+  background-color: #eff6ff;
+}
+
+.achievement-badge.green {
+  background-color: #f0fdf4;
+}
+
+.achievement-badge.purple {
+  background-color: #faf5ff;
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-title {
+  font-weight: 600;
+}
+
+.achievement-badge.yellow .achievement-title {
+  color: #a16207;
+}
+
+.achievement-badge.blue .achievement-title {
+  color: #1d4ed8;
+}
+
+.achievement-badge.green .achievement-title {
+  color: #15803d;
+}
+
+.achievement-badge.purple .achievement-title {
+  color: #7e22ce;
+}
+
+.achievement-description {
+  font-size: 0.875rem;
+}
+
+.achievement-badge.yellow .achievement-description {
+  color: #a16207;
+}
+
+.achievement-badge.blue .achievement-description {
+  color: #1d4ed8;
+}
+
+.achievement-badge.green .achievement-description {
+  color: #15803d;
+}
+
+.achievement-badge.purple .achievement-description {
+  color: #7e22ce;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: 2rem 0;
+  color: #6b7280;
+}
+
+.empty-state-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16rem;
+}
+
+.loading-text {
+  font-size: 1.125rem;
+  color: #4b5563;
+}

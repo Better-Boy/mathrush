@@ -1,17 +1,20 @@
 import { Authenticated, Unauthenticated, useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import { Id } from "../convex/_generated/dataModel";
-import { SignInForm } from "./SignInForm";
-import { SignOutButton } from "./SignOutButton";
+import { SignInForm } from "./components/signin/SignInForm";
+import { SignOutButton } from "./components/signin/SignOutButton";
 import { Toaster } from "sonner";
-import { useState, useEffect } from "react";
-import { Dashboard } from "./components/Dashboard";
-import { GameLobby } from "./components/GameLobby";
-import { GameRoom } from "./components/GameRoom";
-import { Leaderboard } from "./components/Leaderboard";
-import { CreatePlayer } from "./components/CreatePlayer";
-import { PlayerProfile } from "./components/PlayerProfile";
-import { Settings } from "./components/Settings";
+import { useState } from "react";
+import { Dashboard } from "./components/dashboard/Dashboard";
+// import { GameLobby } from "./components/GameLobby";
+import { GameRoom } from "./components/gameroom/GameRoom";
+// import { Leaderboard } from "./components/Leaderboard";
+// import { CreatePlayer } from "./components/CreatePlayer";
+import { CreatePlayer } from "./components/player/CreatePlayer";
+import { Settings } from "./components/settings/Settings";
+import { PlayerProfile } from "./components/profile/Profile";
+import { Leaderboard } from "./components/leaderboard/Leaderboard";
+import { GameLobby } from "./components/gamelobby/GameLobby";
 
 export default function App() {
   const [currentView, setCurrentView] = useState<'dashboard' | 'lobby' | 'game' | 'leaderboard' | 'profile' | 'settings'>('dashboard');
