@@ -30,6 +30,7 @@ const correctAnswers =  currentPlayer.overallScore / 5;
           </div>
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">{currentPlayer.username}</h2>
+            <p className="text-gray-800 mb-2">{currentPlayer.email}</p>
           </div>
         </div>
 

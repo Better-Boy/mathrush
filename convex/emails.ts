@@ -1,8 +1,8 @@
 import { internalQuery, internalMutation, internalAction, action, mutation } from "./_generated/server";
 import { v } from "convex/values";
-import { internal, components, api } from "./_generated/api";
+import { internal, components } from "./_generated/api";
 import { Resend, vEmailId, vEmailEvent } from '@convex-dev/resend';
-import { generateMathQuestion, getTopNews, getMathConcept } from "./openai";
+import { generateMathQuestion, getMathConcept } from "./openai";
 import { generateWeeklyDigestEmail, generateGameResultEmail, generateDailyQuestionEmail } from "./utils";
 
 export const resend: Resend = new Resend(components.resend, {
@@ -29,8 +29,8 @@ export const handleEmailEvent = internalMutation({
 
     if(invite.emailStatus === args.event.type) return;
 
-    let existingStatus = invite.emailStatus;
-    let newStatus = args.event.type.replace("email.", "");
+    const existingStatus = invite.emailStatus;
+    const newStatus = args.event.type.replace("email.", "");
     
     if(existingStatus === newStatus) return;
 
@@ -177,7 +177,6 @@ export const sendWeeklyDigest = internalAction({
 
     const subscribers = await ctx.runQuery(internal.emails.getWeeklyDigestSubscribers, {});
 
-    // const topNewsData = await getTopNews();
     const mathConceptData = await getMathConcept();
     const emailContent = generateWeeklyDigestEmail(mathConceptData);
 
