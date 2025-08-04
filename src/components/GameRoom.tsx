@@ -38,7 +38,7 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
   const markParticipantInactive = useMutation(api.games.markParticipantInactive);
   const sendMailAfterGame = useMutation(api.emails.sendPostGameMail);
   if(!currentPlayer) throw new Error("player not there");
-  const gameWithParticipants = game?.gameWithAllParticipants.find((p: any) => p.playerId === currentPlayer._id);
+  const currentPlayerGameDetails = game?.participants.find((p: any) => p.playerId === currentPlayer._id);
   const isHost = game?.hostId === currentPlayer._id;
 
   useEffect(() => {
@@ -134,7 +134,7 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
   };
 
   const handleNextQuestion = async () => {
-    if(gameFinished || gameWithParticipants?.currentQuestionCount == game.maxQuestions){
+    if(gameFinished || currentPlayerGameDetails.currentQuestionCount == game.maxQuestions){
       setGameFinished(true);
       return;
     }
@@ -405,7 +405,7 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="text-2xl font-bold text-purple-600">
-              Question {gameWithParticipants?.currentQuestionCount} of {game.maxQuestions}
+              Question {currentPlayerGameDetails.currentQuestionCount} of {game.maxQuestions}
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -487,7 +487,7 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
                 {participant?.username}
               </div>
               <div className="text-lg font-bold text-purple-600">
-                {game?.gameWithAllParticipants.find((p: any) => p.playerId === participant._id)?.score}
+                {participant?.score}
               </div>
             </div>
           ))}

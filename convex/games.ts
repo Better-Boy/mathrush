@@ -290,18 +290,13 @@ export const getGame = query({
     const game = await ctx.db.get(args.gameId);
     if (!game) throw new Error("game not found");
 
-    const participants = await ctx.db
-      .query("gameParticipants")
-      .withIndex("by_game_player", (q) => q.eq("gameId", args.gameId))
-      .filter((q) => q.eq(q.field("playerStatus"), "active"))
-      .collect();
+    const participants: any = await ctx.runQuery(internal.games.getGameParticipants, {gameId: args.gameId});
 
     const participantDetails = await Promise.all(
-      participants.map(async (participant) => await ctx.db.get(participant.playerId))
-    );
-
-    const gameWithAllParticipants: any = await Promise.all(
-      participants.map(async () => await ctx.runQuery(internal.games.getGameParticipants, {gameId: args.gameId}))
+      participants.map(async (participant: any) => {
+        const playerDetails = await ctx.db.get(participant.playerId);
+        return {...playerDetails, ...participant};
+      })
     );
 
     const emailInviteDetails = await ctx.db
@@ -313,7 +308,6 @@ export const getGame = query({
     return {
       ...game,
       participants: participantDetails,
-      gameWithAllParticipants: gameWithAllParticipants,
       invites: emailInviteDetails
     };
   },
@@ -327,6 +321,7 @@ export const getGameParticipants = internalQuery({
     return await ctx.db
       .query("gameParticipants")
       .withIndex("by_game_player", (q) => q.eq("gameId", args.gameId))
+      .filter((q) => q.eq(q.field("playerStatus"), "active"))
       .collect();
   }
 });
