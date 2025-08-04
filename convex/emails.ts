@@ -1,9 +1,9 @@
-import { internalQuery, internalMutation, internalAction, action, mutation } from "./_generated/server";
+import { internalQuery, internalMutation, internalAction, mutation } from "./_generated/server";
 import { v } from "convex/values";
 import { internal, components } from "./_generated/api";
 import { Resend, vEmailId, vEmailEvent } from '@convex-dev/resend';
-import { generateMathQuestion, getMathConcept } from "./openai";
-import { generateWeeklyDigestEmail, generateGameResultEmail, generateDailyQuestionEmail } from "./utils";
+import { generateMathQuestion, getMathConcept, getTopNews } from "./openai";
+import { generateWeeklyDigestEmail_, generateGameResultEmail, generateDailyQuestionEmail } from "./utils";
 
 export const resend: Resend = new Resend(components.resend, {
   testMode: false, // Set to false for production
@@ -146,7 +146,12 @@ export const sendDailyQuestion = internalAction({
     const today = new Date().toISOString().split('T')[0];
     
     // Generate daily question
-    const questionData = await generateMathQuestion("medium", ["algebra", "arithmetic", "geometry"]);
+    const questionData = await generateMathQuestion("medium", ["addition", "subtraction", "multiplication", "division", "algebra", "arithmetic", "geometry"]);
+
+    // add daily question to database
+    await ctx.runMutation(internal.questions.addQuestionToDatabase, {
+      question: questionData
+    });
 
     const emailContent = generateDailyQuestionEmail(questionData);
 
@@ -170,15 +175,17 @@ export const sendDailyQuestion = internalAction({
 });
 
 
+
+
 export const sendWeeklyDigest = internalAction({
   args: {},
   handler: async (ctx) => {
     const today = new Date().toISOString().split('T')[0];
 
     const subscribers = await ctx.runQuery(internal.emails.getWeeklyDigestSubscribers, {});
-
+    const topNewsData = await getTopNews();
     const mathConceptData = await getMathConcept();
-    const emailContent = generateWeeklyDigestEmail(mathConceptData);
+    const emailContent = generateWeeklyDigestEmail_(topNewsData, mathConceptData);
 
     for (const subscriber of subscribers) {
 

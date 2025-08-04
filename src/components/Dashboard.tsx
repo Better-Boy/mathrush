@@ -8,7 +8,7 @@ interface DashboardProps {
 export function Dashboard({ setCurrentView }: DashboardProps) {
   const currentPlayer = useQuery(api.players.getCurrentPlayer);
 
-  if(!currentPlayer) return null;
+  if(!currentPlayer) throw new Error("player not there");
 
   const leaderboard = useQuery(api.players.getLeaderboard, { limit: 5 });
   const correctAnswers =  currentPlayer.overallScore / 5;

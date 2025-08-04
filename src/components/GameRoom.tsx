@@ -101,8 +101,6 @@ export function GameRoom({ gameId, setCurrentView, setCurrentGameId }: GameRoomP
     setGameFinished(true);
   };
 
-
-
   const handleSendInvitations = async () => {
     
     if (!inviteEmails.trim()) {

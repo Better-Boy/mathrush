@@ -48,24 +48,34 @@ export const getNextQuestion = mutation({
   },
 });
 
-
 export const addSampleQuestions = internalMutation({
   handler: async (ctx) => {
       const questions = [{
-        
+
       }];
 
-  questions.map(async (question: any) => {
-    await ctx.db.insert("questions", {
-      question: question.question,
-      options: question.options,
-      correctAnswer: question.correctAnswer,
-      difficulty: question.difficulty,
-      topic: question.topic,
-      explanation: question.explanation
+  await Promise.all(questions.map(async (question: any) => {
+    await ctx.runMutation(internal.questions.addQuestionToDatabase, {
+      question: question
     });
-  });
+  }));
   }
+});
+
+export const addQuestionToDatabase = internalMutation({
+  args: {
+    question: v.any()
+  },
+  handler: async (ctx, args) => {
+    await ctx.db.insert("questions", {
+      question: args.question.question,
+      options: args.question.options,
+      correctAnswer: args.question.correctAnswer,
+      difficulty: args.question.difficulty,
+      topic: args.question.topic,
+      explanation: args.question.explanation
+    });
+  },
 });
 
 export const getRandomQuestion = internalQuery({
