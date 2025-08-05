@@ -103,10 +103,11 @@ export const getLeaderboard = query({
   },
   handler: async (ctx, args) => {
     const limit = args.limit ?? 10;
-    
+
     const players = await ctx.db
       .query("players")
-      // .withIndex("by_score", (q) => q.gt("overallScore", 0))
+      .filter((q) => q.gt(q.field("gamesPlayed"), 0))
+      // .withIndex("ov", (q) => q.gt("overallScore", 0))
       .order("asc")
       .take(limit);
 
