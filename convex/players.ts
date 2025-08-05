@@ -106,7 +106,7 @@ export const getLeaderboard = query({
     
     const players = await ctx.db
       .query("players")
-      .withIndex("by_score", (q) => q.gt("overallScore", 0))
+      // .withIndex("by_score", (q) => q.gt("overallScore", 0))
       .order("desc")
       .take(limit);
 
